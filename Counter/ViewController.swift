@@ -9,10 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var incrementButton: UIButton!
+    @IBOutlet private weak var counterLabel: UILabel!
+    @IBOutlet private weak var incrementButton: UIButton!
     private var counterNumber: Int = 0
-    var counterText: String {
+    private var counterText: String {
         "Значение счётчика: \(counterNumber)"
     }
     
@@ -22,11 +22,11 @@ class ViewController: UIViewController {
         counterLabel.text = getCounterText()
     }
 
-    func getCounterText() -> String {
+    private func getCounterText() -> String {
         return "Значение счётчика: \(counterNumber)"
     }
 
-    @IBAction func incrementButtonDidTap() {
+    @IBAction private func incrementButtonDidTap() {
         counterNumber += 1
         counterLabel.text = counterText
     }
